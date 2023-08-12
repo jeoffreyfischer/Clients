@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hPYx51QLw7wxY/oYFNFMzGmRRx4UH70lu+t2YyZ9N5vrPmpN/JdirsrKr+oW+uBTthJWzYW0iTsmFcacWCg4GA==",
+  "dgSpecHash": "mwv8BME5F0rP2Kx5mQm8jEd3KGPn9yJCkcN4tkCa/M9kzastpND2TdxeLsEq2c8id1305KbJ5x5vWyE49mCCkA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jeoffrey\\Documents\\SSW\\Test\\Clients\\clients-api\\clients-api.csproj",
+  "projectFilePath": "c:\\Users\\Jeoffrey\\Documents\\SSW\\Test\\Clients\\clients-api\\clients-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jeoffrey\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Jeoffrey\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
