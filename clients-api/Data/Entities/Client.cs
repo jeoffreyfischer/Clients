@@ -1,5 +1,4 @@
 namespace client_api.Data.Entities;
-
 public class Client
 {
     public long Id { get; set; }

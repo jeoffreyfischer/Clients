@@ -1,5 +1,4 @@
 namespace client_api.Models.Client;
-
 public class ClientInfoDTO
 {
     public long Id { get; set; }
