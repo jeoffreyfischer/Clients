@@ -19,7 +19,7 @@ namespace client_api.Controllers
             _clientService = clientService;
         }
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<ActionResult<List<ClientDisplayDTO>>> GetAll(CancellationToken cancellationToken = default)
         {
             try
@@ -34,7 +34,7 @@ namespace client_api.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("Get/{id}")]
         public async Task<ActionResult<ClientInfoDTO>> Get(long id, CancellationToken cancellationToken = default)
         {
             try
@@ -104,7 +104,7 @@ namespace client_api.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> Delete(long id, CancellationToken cancellationToken = default)
         {
             try
