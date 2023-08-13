@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jeoffrey\\Documents\\SSW\\Test\\Clients\\clients-api\\clients-api.csproj": {}
+    "c:\\Users\\Jeoffrey\\Documents\\SSW\\Test\\Clients\\clients-api\\clients-api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jeoffrey\\Documents\\SSW\\Test\\Clients\\clients-api\\clients-api.csproj": {
+    "c:\\Users\\Jeoffrey\\Documents\\SSW\\Test\\Clients\\clients-api\\clients-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jeoffrey\\Documents\\SSW\\Test\\Clients\\clients-api\\clients-api.csproj",
+        "projectUniqueName": "c:\\Users\\Jeoffrey\\Documents\\SSW\\Test\\Clients\\clients-api\\clients-api.csproj",
         "projectName": "clients-api",
-        "projectPath": "C:\\Users\\Jeoffrey\\Documents\\SSW\\Test\\Clients\\clients-api\\clients-api.csproj",
+        "projectPath": "c:\\Users\\Jeoffrey\\Documents\\SSW\\Test\\Clients\\clients-api\\clients-api.csproj",
         "packagesPath": "C:\\Users\\Jeoffrey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jeoffrey\\Documents\\SSW\\Test\\Clients\\clients-api\\obj\\",
+        "outputPath": "c:\\Users\\Jeoffrey\\Documents\\SSW\\Test\\Clients\\clients-api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jeoffrey\\AppData\\Roaming\\NuGet\\NuGet.Config"
