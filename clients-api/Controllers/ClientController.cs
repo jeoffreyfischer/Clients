@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using client_api.Data.Entities;
 using client_api.Models.Client;
 using client_api.Services;
 
@@ -80,7 +79,7 @@ namespace client_api.Controllers
         {
             if (id != clientInfoDTO.Id)
             {
-                return BadRequest("The provided Id does not match the ingredient's Id.");
+                return BadRequest("The provided Id does not match the client's Id.");
             }
 
             try
