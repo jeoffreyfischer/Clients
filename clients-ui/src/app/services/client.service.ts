@@ -19,11 +19,11 @@ export class ClientService {
   constructor(private http: HttpClient) { }
 
   getClients(): Observable<ClientDisplayDTO[]> {
-    return this.http.get<ClientDisplayDTO[]>(this.clientsURL, this.httpOptions);
+    return this.http.get<ClientDisplayDTO[]>(`${this.clientsURL}/GetAll`, this.httpOptions);
   }
 
   getClient(id: number): Observable<ClientInfoDTO> {
-    return this.http.get<ClientInfoDTO>(`${this.clientsURL}/${id}`, this.httpOptions);
+    return this.http.get<ClientInfoDTO>(`${this.clientsURL}/Get/${id}`, this.httpOptions);
   }
 
   addClient(client: ClientInfoDTO): Observable<HttpResponse<any>> {
