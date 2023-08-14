@@ -4,7 +4,7 @@ import { ClientsListComponent } from './components/clients-list/clients-list.com
 import { ClientFormComponent } from './components/client-form/client-form.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/clients/add', pathMatch: 'full' },
+  { path: '', redirectTo: '/clients', pathMatch: 'full' },
   { path: 'clients', component: ClientsListComponent },
   { path: 'clients/add', component: ClientFormComponent },
   { path: 'clients/edit/:id', component: ClientFormComponent }
