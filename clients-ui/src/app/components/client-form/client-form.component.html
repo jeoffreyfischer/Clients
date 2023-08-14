@@ -1,1 +1,38 @@
-<p>client-form works!</p>
+<h1>{{ title }}</h1>
+
+<div class="buttons-top">
+    <button type="button" class="btn btn-info" (click)="goToListPage()">Home</button>
+    <button *ngIf="!isAddMode" type="button" class="btn btn-danger" (click)="deleteClient()">Delete</button>
+</div>
+
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <div class="form">
+                <label for="name">Name: </label>
+                <input id="name" type="text" formControlName="name" placeholder="Name" class="form-control text-center">
+
+                <label for="age">Age: </label>
+                <input id="age" type="number" formControlName="age" placeholder="Age" class="form-control text-center">
+
+                <label for="height">Height: </label>
+                <input id="height" type="number" formControlName="height" placeholder="Height"
+                    class="form-control text-center">
+
+                <div>
+                    <label for="isMember">Member: </label>
+                    <input id="isMember" type="checkbox" formControlName="isMember" class="form-check-input">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <div class="buttons-bottom">
+                <button type="submit" class="btn btn-success" [disabled]="!clientForm.valid">Save</button>
+                <button type="button" class="btn btn-warning" (click)="goToListPage()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</form>

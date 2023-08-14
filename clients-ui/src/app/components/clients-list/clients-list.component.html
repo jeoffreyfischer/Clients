@@ -1,11 +1,16 @@
 <h1>{{ title }}</h1>
 
+<div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-primary" (click)="goToAddPage()">Add</button>
+</div>
+
 <table>
     <thead>
         <tr>
             <th>Name</th>
             <th>Age</th>
             <th>Member</th>
+            <th>Edit</th>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +18,7 @@
             <td>{{ client.name }}</td>
             <td>{{ client.age }}</td>
             <td>{{ client.isMember }}</td>
+            <td><button type="button" class="btn btn-success" (click)="goToClient(client.id)">Edit</button></td>
         </tr>
     </tbody>
 </table>
