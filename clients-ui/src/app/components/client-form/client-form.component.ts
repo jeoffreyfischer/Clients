@@ -19,8 +19,8 @@ export class ClientFormComponent implements OnInit {
 
   clientForm = new FormGroup({
     id: new FormControl(0),
-    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    age: new FormControl(0, [Validators.required]),
+    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    age: new FormControl(18, [Validators.required, Validators.min(18)]),
     height: new FormControl(0, [Validators.required, Validators.min(0)]),
     isMember: new FormControl('', [Validators.required])
   });
