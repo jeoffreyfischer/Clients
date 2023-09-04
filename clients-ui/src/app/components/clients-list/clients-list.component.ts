@@ -11,8 +11,6 @@ import { Router } from '@angular/router';
 })
 export class ClientsListComponent implements OnInit {
 
-  title = "Clients List";
-
   constructor(private clientService: ClientService, private router: Router) {}
 
   clients$: Observable<ClientDisplayDTO[]> = new Observable<ClientDisplayDTO[]>();

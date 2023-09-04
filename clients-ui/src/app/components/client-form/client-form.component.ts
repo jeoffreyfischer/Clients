@@ -11,7 +11,6 @@ import { ClientInfoDTO } from 'src/app/models/client-info-dto.interface';
 })
 export class ClientFormComponent implements OnInit {
 
-  title = "Client Details";
   isAddMode: boolean = false;
 
   constructor(private clientService: ClientService, private route: ActivatedRoute, private router: Router) {
@@ -50,9 +49,11 @@ export class ClientFormComponent implements OnInit {
   }
 
   deleteClient() {
-    console.log(this.route.snapshot.params['id'])
-    this.clientService.deleteClient(this.route.snapshot.params['id']);
-    this.router.navigate(['/clients']);
+    this.clientService.deleteClient(this.route.snapshot.params['id']).subscribe(
+      () => {
+        this.router.navigate(['/clients']);
+      },
+    );
   }
 
   onSubmit() {
