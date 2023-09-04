@@ -11,7 +11,7 @@ using clientApi.Context;
 namespace clients_api.Migrations
 {
     [DbContext(typeof(ClientDbContext))]
-    [Migration("20230812051940_InitialCreate")]
+    [Migration("20230904085407_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
