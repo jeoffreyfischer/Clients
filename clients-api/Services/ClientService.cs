@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using client_api.Data.Entities;
 using client_api.Models.Client;
-using clientApi.Context;
+using client_api.Data;
 
 namespace client_api.Services;
 public class ClientService

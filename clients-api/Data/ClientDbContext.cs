@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using client_api.Data.Entities;
 
-namespace clientApi.Context;
+namespace client_api.Data;
 
 public class ClientDbContext : DbContext
 {
