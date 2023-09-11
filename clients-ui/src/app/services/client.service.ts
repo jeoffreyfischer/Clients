@@ -39,4 +39,8 @@ export class ClientService {
     return this.http.delete<HttpResponse<any>>(`${this.clientsURL}/Delete/${id}`, this.httpOptions);
   }
 
+  searchClients(query: string): Observable<ClientInfoDTO[]> {
+    return this.http.get<ClientInfoDTO[]>(`${this.clientsURL}/Search?searchTerm=${query}`, this.httpOptions);
+  }
+
 }

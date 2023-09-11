@@ -46,7 +46,6 @@ public class ClientService
         }).ToListAsync(cancellationToken);
 
         return ClientDisplayDTO;
-
     }
 
     public async Task<ClientInfoDTO> Get(long id, CancellationToken cancellationToken)
@@ -114,4 +113,28 @@ public class ClientService
         _context.Clients.Remove(client);
         await _context.SaveChangesAsync();
     }
+
+    public async Task<List<ClientInfoDTO>> SearchByName(string searchTerm, CancellationToken cancellationToken)
+    {
+        var cleanedSearchTerm = searchTerm.Trim().ToLower();
+        var clients = await _context.Clients
+            .Where(i => i.Name.Contains(cleanedSearchTerm))
+            .Select(i => new ClientInfoDTO
+            {
+                Id = i.Id,
+                Name = i.Name,
+                Age = i.Age,
+                Height = i.Height,
+                IsMember = i.IsMember
+            })
+            .ToListAsync(cancellationToken);
+
+        if (clients.Count == 0)
+        {
+            throw new NotFoundException($"Client with string '{searchTerm}' not found.");
+        }
+
+        return clients;
+    }
+
 }

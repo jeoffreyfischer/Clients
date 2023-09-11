@@ -1,7 +1,13 @@
-<h1>Clients List</h1>
+<h1 class="title">Clients List</h1>
 
-<div class="d-flex justify-content-end">
-    <button type="button" class="btn btn-primary" (click)="goToAddPage()">Add</button>
+<div class="search-add-button-container">
+    <div class="search-div">
+        <input type="search" class="form-control search-input" placeholder="Search"
+            [formControl]="searchQueryControl" />
+    </div>
+    <div class="add-div">
+        <button type="button" class="btn btn-primary add-anchor" (click)="goToAddPage()">Add</button>
+    </div>
 </div>
 
 <table>
@@ -14,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let client of clients$ | async">
+        <tr *ngFor="let client of filteredClients$ | async">
             <td>{{ client.name }}</td>
             <td>{{ client.age }}</td>
             <td>{{ client.isMember }}</td>

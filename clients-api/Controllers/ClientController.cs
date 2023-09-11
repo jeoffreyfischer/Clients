@@ -123,5 +123,26 @@ namespace client_api.Controllers
                 return StatusCode(500, "An unexpected error occurred. Please try again later.");
             }
         }
+
+        [HttpGet("Search")]
+        public async Task<ActionResult<List<ClientInfoDTO>>> Search([FromQuery] string searchTerm, CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                var clients = await _clientService.SearchByName(searchTerm, cancellationToken);
+                return Ok(clients);
+            }
+            catch (NotFoundException ex)
+            {
+                _logger.LogError(ex, "NotFoundException occurred.");
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred.");
+                return StatusCode(500, "An unexpected error occurred. Please try again later.");
+            }
+        }
     }
+
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from 'src/app/services/client.service';
-import { Observable} from 'rxjs';
+import { Observable, debounceTime, distinctUntilChanged, startWith, switchMap } from 'rxjs';
 import { ClientDisplayDTO } from 'src/app/models/client-display-dto.interface';
 import { Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-clients-list',
@@ -11,12 +12,28 @@ import { Router } from '@angular/router';
 })
 export class ClientsListComponent implements OnInit {
 
-  constructor(private clientService: ClientService, private router: Router) {}
+  filteredClients$: Observable<ClientDisplayDTO[]> = new Observable<ClientDisplayDTO[]>();
+  searchQueryControl: FormControl;
 
-  clients$: Observable<ClientDisplayDTO[]> = new Observable<ClientDisplayDTO[]>();
+  constructor(private clientService: ClientService, private router: Router) {
+    this.searchQueryControl = new FormControl('');
+  }
 
   ngOnInit(): void {
-    this.clients$ = this.clientService.getClients();
+    this.filteredClients$ = this.searchQueryControl.valueChanges
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged(),
+        startWith(this.searchQueryControl.value),
+        switchMap(searchText => {
+          if (!searchText || searchText.trim() === '') {
+            return this.clientService.getClients();
+          }
+          else {
+            return this.clientService.searchClients(searchText);
+          }
+        })
+      )
   }
 
   goToAddPage() {
@@ -25,6 +42,6 @@ export class ClientsListComponent implements OnInit {
 
   goToClient(clientId: number) {
     this.router.navigate(['/clients/edit', clientId]);
-}
+  }
 
 }
